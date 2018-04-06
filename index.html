@@ -11922,7 +11922,7 @@ a.anchor-link {
 <li>大阪大学医学部医学科6年</li>
 <li>免疫学フロンティアセンター　実験免疫学（坂口研）</li>
 <li><strong> Python推進派です。 </strong></li>
-<li>Bioinformatics contest 2018(ITMO大学)で入賞して喜んでいます。</li>
+<li><a href="https://bioinf.me/contest">Bioinformatics contest 2018(ITMO大学)</a>で入賞して喜んでいます。</li>
 </ul>
 <p><img src="img/IMG_0840.JPG"  width=400></p>
 
@@ -12179,7 +12179,7 @@ AGGTGCGTGCCTAAGGTATGCAAGAGATGG
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="BLAST">BLAST<a class="anchor-link" href="#BLAST">&#182;</a></h3><h4 id="&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;">&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;<a class="anchor-link" href="#&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;">&#182;</a></h4><p><code>$ brew install -v blast</code>でインストール可能。と記載されていたが、makeblastdb等一部機能がうまく使えなかった。versionの問題か？</p>
-<p><code>$ conda install blast</code>だと問題なく行けた。これを機にanacondaを導入にしよう！</p>
+<p><code>$ conda install blast</code>だと問題なく行けた。これを機にanacondaを導入にしよう！（詳しくは4.2で説明します。）</p>
 
 </div>
 </div>
@@ -13115,7 +13115,16 @@ wikipedia 「Python」より</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>統計やバイオインフォマティクス特化ならRで十分。DESeq2など高機能ライブラリもRで用意されている。最新の機械学習やドローンなど、他のこともしたい欲があるならpythonがおすすめ。実はjuliaという選択肢も。</p>
+<p>統計やバイオインフォマティクス特化ならRで十分。DESeq2など高機能ライブラリもRで用意されている。最新の機械学習やドローンなど、他のこともしたい欲があるならpythonがおすすめ。juliaという選択肢も。</p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;">&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;<a class="anchor-link" href="#&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;">&#182;</a></h3><p>いろいろやり方がある。そもそもMacならもともとインストールされている。しかし、python3ではなくpython2が入っているので入れ直すのがおすすめ。更に、そのまま入れるより<a href="https://www.anaconda.com/download">anaconda</a>で一括管理するのがおすすめ。軽量版の<a href="https://conda.io/miniconda.html">miniconda</a>もある。実行環境はjupyter notebook(まさに今回使っているもの)や、jupyter labがおすすめ。(ana|mini)condaを入れると先程から登場している<code>$ conda install</code>が使えるようになる。</p>
 
 </div>
 </div>
@@ -14827,10 +14836,11 @@ dtype: float64</pre>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="k">import</span> <span class="n">PCA</span>
-<span class="kn">from</span> <span class="nn">sklearn.manifold</span> <span class="k">import</span> <span class="n">TSNE</span>
+<span class="c1"># from sklearn.manifold import TSNE</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df_exp</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">result</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">result</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
+<span class="c1"># plt.savefig(&#39;img/pca.png&#39;)</span>
 </pre></div>
 
 </div>
