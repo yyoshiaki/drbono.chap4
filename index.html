@@ -11986,7 +11986,7 @@ a.anchor-link {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="&#12506;&#12450;&#12527;&#12452;&#12474;&#12450;&#12521;&#12452;&#12531;&#12513;&#12531;&#12488;,-&#12489;&#12483;&#12488;&#12503;&#12525;&#12483;&#12488;">&#12506;&#12450;&#12527;&#12452;&#12474;&#12450;&#12521;&#12452;&#12531;&#12513;&#12531;&#12488;, &#12489;&#12483;&#12488;&#12503;&#12525;&#12483;&#12488;<a class="anchor-link" href="#&#12506;&#12450;&#12527;&#12452;&#12474;&#12450;&#12521;&#12452;&#12531;&#12513;&#12531;&#12488;,-&#12489;&#12483;&#12488;&#12503;&#12525;&#12483;&#12488;">&#182;</a></h3><ul>
 <li>２本の配列を比較すること。</li>
-<li>同じ生物で比べることもあるし、違う生物感で比べることもある。</li>
+<li>同じ生物で比べることもあるし、違う生物間で比べることもある。</li>
 <li>配列解析の出発点。</li>
 <li>それを可視化するのが<strong>ドットプロット</strong>。</li>
 </ul>
@@ -12098,7 +12098,7 @@ TTGCACCAGCCTAAGTTTCAGCTTGTCAATAGCAGCAATGATCCAGAACTTCAAACTTGTCACAGGGGGT
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">skbio.sequence</span> <span class="k">import</span> <span class="n">DNA</span>
@@ -12178,24 +12178,15 @@ AGGTGCGTGCCTAAGGTATGCAAGAGATGG
 
 </div>
 </div>
-</div><aside class="notes">
-
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>BLAST使ったことある人にアンケートしてなにしてるかきいてみよ</p>
-
-</div>
-</div>
-</div>
-</aside></section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="BLAST">BLAST<a class="anchor-link" href="#BLAST">&#182;</a></h3><h4 id="&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;">&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;<a class="anchor-link" href="#&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;">&#182;</a></h4><p><code>$ brew install -v blast</code>でインストール可能。と記載されていたが、makeblastdb等一部機能がうまく使えなかった。versionの問題か？</p>
-<p><code>$ conda install blast</code>だと問題なく行けた。これを機にanacondaを導入にしよう！（詳しくは4.2で説明します。）</p>
+<p><code>$ conda install blast</code>だと問題なく行けた。これを機にanacondaを導入しよう！（詳しくは4.2で説明します。）</p>
+<p>追記
+依存関係に寄るみたいです。brewで入ったという人もいました。お試しください。</p>
 
 </div>
 </div>
@@ -12210,7 +12201,7 @@ AGGTGCGTGCCTAAGGTATGCAAGAGATGG
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span> head seq/chr22.hg19.fa
@@ -12250,7 +12241,7 @@ NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span> makeblastdb -in seq/chr22.hg19.fa -dbtype nucl
@@ -12272,14 +12263,14 @@ NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
 
-Building a new DB, current time: 04/12/2018 12:21:56
+Building a new DB, current time: 04/12/2018 22:18:29
 New DB name:   /Users/yasumizuyoshiaki/bioinformatics/bono/seq/chr22.hg19.fa
 New DB title:  seq/chr22.hg19.fa
 Sequence type: Nucleotide
 Deleted existing Nucleotide BLAST database named /Users/yasumizuyoshiaki/bioinformatics/bono/seq/chr22.hg19.fa
 Keep MBits: T
 Maximum file size: 1000000000B
-Adding sequences from FASTA; added 1 sequences in 0.691985 seconds.
+Adding sequences from FASTA; added 1 sequences in 0.666504 seconds.
 </pre>
 </div>
 </div>
@@ -12290,7 +12281,7 @@ Adding sequences from FASTA; added 1 sequences in 0.691985 seconds.
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>ls seq
@@ -12331,7 +12322,7 @@ U23808.2.fasta    chr22.hg19.fa.nhr chr22.hg19.fa.nsq
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span> head seq/dgcr6.fa
@@ -12371,7 +12362,7 @@ ATGGACCAGAAGATCGTCCTGGAGCTGGACCGGAAGGTGGCTGACCAGCAGAGCACACTGGAGAAGGCGG
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span> blastn -query seq/dgcr6.fa -db seq/chr22.hg19.fa 
@@ -12664,7 +12655,7 @@ Effective search space used: 62540234260
 
 
   Database: seq/chr22.hg19.fa
-    Posted date:  Apr 12, 2018  12:21 PM
+    Posted date:  Apr 12, 2018  10:18 PM
   Number of letters in database: 51,304,566
   Number of sequences in database:  1
 
@@ -12690,7 +12681,7 @@ Gap Penalties: Existence: 0, Extension: 2.5
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span> blastn -query seq/dgcr6.fa -db seq/chr22.hg19.fa -outfmt <span class="m">7</span> -out blast.out.txt
@@ -12703,7 +12694,7 @@ Gap Penalties: Existence: 0, Extension: 2.5
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span> head blast.out.txt
@@ -12797,7 +12788,7 @@ NM_005675.4	chr22	99.405	168	0	1	260	426	18894075	18894242	1.96e-81	303
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>blat seq/chr22.hg19.fa seq/dgcr6.fa output.psl
@@ -12829,7 +12820,7 @@ Searched 1245 bases in 1 sequences
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>head output.psl
@@ -12986,7 +12977,7 @@ $ conda install -c bioconda bwa
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span> curl http://gggenome.dbcls.jp/hg38/1/AGGTVANNTGACCT.gff
@@ -13163,7 +13154,7 @@ wikipedia 「Python」より</p>
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -13192,7 +13183,7 @@ wikipedia 「Python」より</p>
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_exp</span>
@@ -13208,7 +13199,7 @@ wikipedia 「Python」より</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[16]:</div>
+<div class="prompt output_prompt">Out[18]:</div>
 
 
 
@@ -14757,7 +14748,7 @@ wikipedia 「Python」より</p>
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 変動係数を出してみる</span>
@@ -14774,7 +14765,7 @@ wikipedia 「Python」より</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[18]:</div>
+<div class="prompt output_prompt">Out[20]:</div>
 
 
 
@@ -14802,7 +14793,7 @@ dtype: float64</pre>
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">clustermap</span><span class="p">(</span><span class="n">df_exp</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s1">&#39;FOXP3&#39;</span><span class="p">,</span> <span class="s1">&#39;CTLA4&#39;</span><span class="p">,</span> <span class="s1">&#39;IL2RA&#39;</span><span class="p">,</span> <span class="s1">&#39;STAT5A&#39;</span><span class="p">,</span> <span class="s1">&#39;STAT5B&#39;</span><span class="p">,</span> <span class="s1">&#39;CD4&#39;</span><span class="p">,</span> <span class="s1">&#39;RORA&#39;</span><span class="p">,</span> <span class="s1">&#39;IL3&#39;</span><span class="p">,</span> <span class="s1">&#39;IL4&#39;</span><span class="p">]],</span>
@@ -14819,13 +14810,13 @@ dtype: float64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[19]:</div>
+<div class="prompt output_prompt">Out[21]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;seaborn.matrix.ClusterGrid at 0x1298cf630&gt;</pre>
+<pre>&lt;seaborn.matrix.ClusterGrid at 0x120f51c50&gt;</pre>
 </div>
 
 </div>
@@ -14851,7 +14842,7 @@ dtype: float64</pre>
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="k">import</span> <span class="n">StandardScaler</span>
@@ -14883,13 +14874,13 @@ dtype: float64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[21]:</div>
+<div class="prompt output_prompt">Out[23]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.collections.PathCollection at 0x12858f518&gt;</pre>
+<pre>&lt;matplotlib.collections.PathCollection at 0x121f0d7f0&gt;</pre>
 </div>
 
 </div>
@@ -14915,7 +14906,7 @@ dtype: float64</pre>
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 固有ベクトル(Loadings)を分析  </span>
@@ -14930,7 +14921,7 @@ dtype: float64</pre>
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_comp</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
@@ -14946,7 +14937,7 @@ dtype: float64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[24]:</div>
+<div class="prompt output_prompt">Out[25]:</div>
 
 
 
@@ -14984,7 +14975,7 @@ Name: 0, dtype: float64</pre>
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_comp</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
@@ -15000,7 +14991,7 @@ Name: 0, dtype: float64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[25]:</div>
+<div class="prompt output_prompt">Out[26]:</div>
 
 
 
@@ -15174,7 +15165,7 @@ Name: 1, dtype: float64</pre>
 
 
 <div class="output_html rendered_html output_subarea ">
-<div id="017c8178-4ff8-47bc-a7d6-e2e85d323af6" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("017c8178-4ff8-47bc-a7d6-e2e85d323af6", [{"type": "scatter", "x": [-20.1484070793946, 1.12686879280835, -53.88326511608902, 32.204042027238216, 48.12684075835489, 10.584322019216568, 40.80433675845007, -18.218488005182543, 14.876541588940912, 50.83885096108682, -40.144190357016186, 54.825974001701155, 23.61508982086457, -49.28007761119206, 20.66683608959951, 32.017830329553156, -39.82625485818729, -40.3179050617969, -3.758509522946353, -75.54371767451997, 27.9738769918882, -32.17430381209458, -30.096879769120093, -25.1681939921346, 9.56174160087956, 40.29789795498674, -18.360090984522525, 8.462081155497662, 25.75932366549633, -10.47996081265858, 6.494446681080439, 10.127547995667959, -6.732758264399197, -26.26307946778979, -17.048072191582072, 115.34704228170831, -38.68262891915728, -91.03995702100137, -18.64327620284464, 112.75490727160849, -50.51788555548088, -88.08996641294007, -47.187473359014184, -57.03204235362915, -80.03119719737086, -56.44251730390137, 131.90219081537208, 108.3214657536819, -37.053883891429365, 116.61196495899785, 114.42848409563291, -34.95995460511765, 125.58048596011076, -46.233016736930736, -34.56226522905187, 84.54757932990464, -23.934651059781757, -37.664542999140814, -30.167041043439113, -22.850099370359324, -19.67351476421765, 11.164340115312584, -65.72788003241438, 5.876174195068231, 3.038864667139922], "y": [102.77604445132773, -57.521469274827155, 200.16442942805926, 67.07775227019965, 14.115968790536229, -81.6783849496572, -81.05109793680762, 52.467175286590226, 48.18779501879013, -67.55190095483907, 64.05773127715013, 83.62827141944503, -51.10980266787731, -43.38880250894484, 6.630781776318047, -92.55699346606211, -60.655405870716514, -4.535646829459316, -9.963335873631587, 84.60760225215277, -102.49036318888285, -48.32436809601211, -1.7843787123604637, -2.4118328130656095, -17.64666837211645, -1.20244243613585, 50.49872528267587, -52.03260659165592, 10.470019387926854, -13.117531859624082, -6.804876300251384, -22.229277105784327, -35.31969226637816, 0.33450303318567653, 6.880207337687133, 22.17207376031374, -6.067709120220124, 36.871839125180635, 15.821402647321007, 36.994040598702796, -27.439450333225654, -7.43419393712562, -11.197010544729832, -34.771053273711814, -73.45873304420995, -36.15003859415739, 22.507600442045735, 25.164411782661336, 39.55183673010356, 14.925190196681797, 15.753454164350288, -25.759422778081742, 10.08232131938264, -33.54065235157731, -14.934663185452843, 4.177409469023838, 22.679796225297885, -3.9226438533977315, 4.92619102815817, 12.304570587376716, 2.4116201676680635, 24.19982989351001, 49.75563771040538, -35.185610855168996, 11.041827085920724], "marker": {"size": "16", "showscale": true, "color": [6.21451277485313, 5.6187410073092465, 6.41697080832773, 5.769793044908087, 5.860347491602674, 6.117281248822816, 5.815486357405409, 6.196785167349354, 5.75358726719254, 5.799050878062043, 5.98444424427841, 6.029692988877843, 6.016476892372066, 6.06220547287225, 6.021010301417924, 6.162598157060316, 6.193787857851748, 5.988961905535111, 6.091257617122847, 6.249900096863496, 6.323595320045707, 6.302623268228717, 6.528302552688724, 6.373045316601069, 5.80152209308699, 5.997837020068513, 6.27714454612122, 6.0115072493131505, 5.8966696384235, 6.1268668923625, 6.046951949752557, 6.2721463804128135, 6.40193689198679, 6.309689237113397, 6.326024196078227, 5.733843077961403, 5.851540882044419, 6.42936398432922, 6.130862011006499, 5.722953235797836, 6.062215905281654, 6.32726143133245, 6.31601341725479, 6.118039644780854, 6.241997701143263, 6.018062907431317, 5.573889172918551, 5.7909978329958065, 6.283917384173557, 5.939083449570034, 5.707236699164767, 5.7795194045793705, 5.7960232248296775, 6.052205298246591, 6.212797792851973, 5.5981566481828535, 6.332232031726661, 6.218385793165041, 6.5595309925164464, 6.27904225542573, 6.23720388082477, 5.748048650932264, 5.934891316476651, 6.284345995949447, 6.294186081784996], "colorbar": {"title": "FOXP3"}, "colorscale": "Viridis"}, "mode": "markers", "text": ["GSM266974.CEL", "GSM266967.CEL", "GSM266970.CEL", "GSM266982.CEL", "GSM266988.CEL", "GSM266972.CEL", "GSM266985.CEL", "GSM266986.CEL", "GSM266975.CEL", "GSM266966.CEL", "GSM266984.CEL", "GSM266976.CEL", "GSM266987.CEL", "GSM266964.CEL", "GSM266981.CEL", "GSM266973.CEL", "GSM266969.CEL", "GSM266983.CEL", "GSM266968.CEL", "GSM266965.CEL", "GSM266971.CEL", "GSM266978.CEL", "GSM558976.CEL", "GSM558982.CEL", "GSM558975.CEL", "GSM558981.CEL", "GSM558979.CEL", "GSM558977.CEL", "GSM616125.CEL", "GSM616119.CEL", "GSM616124.CEL", "GSM616120.CEL", "GSM616118.CEL", "GSM616126.CEL", "GSM723826.CEL", "GSM723827.CEL", "GSM285033.CEL", "GSM285042.CEL", "GSM723821.CEL", "GSM723828.CEL", "GSM723817.CEL", "GSM285044.CEL", "GSM285038.CEL", "GSM723815.CEL", "GSM285027.CEL", "GSM285032.CEL", "GSM723831.CEL", "GSM723830.CEL", "GSM285037.CEL", "GSM723829.CEL", "GSM723833.CEL", "GSM285031.CEL", "GSM723832.CEL", "GSM723816.CEL", "GSM723818.CEL", "GSM723820.CEL", "GSM723824.CEL", "GSM723819.CEL", "GSM723823.CEL", "GSM723825.CEL", "GSM723822.CEL", "MKLE_133-2_EXP2-TREG-TUBE2_071111_HG-U133_Plus_2.CEL", "MKLE_133-2_EXP1-TREG-TUBE14_070511_HG-U133_Plus_2.CEL", "MKLE_133-2_EXP1-TREG-P-TUBE18_070511_HG-U133_Plus_2.CEL", "MKLE_133-2_EXP2-TREG-P-TUBE6_070511_HG-U133_Plus_2.CEL"]}], {"title": "PCA"}, {"linkText": "Export to plot.ly", "showLink": true})});</script>
+<div id="03dd67ac-1316-4b87-b72e-dc91b4c057eb" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("03dd67ac-1316-4b87-b72e-dc91b4c057eb", [{"mode": "markers", "x": [-20.148403037756033, 1.1268678718525242, -53.883265155933856, 32.20404234370088, 48.126845394216005, 10.584318467683824, 40.804337051764385, -18.218489159230778, 14.876532689672699, 50.83885100129839, -40.14418893273418, 54.82597465020037, 23.615082459856065, -49.28006563800806, 20.666835375186366, 32.01783517978333, -39.82625007814725, -40.31790716915378, -3.7585049892199134, -75.54372006108208, 27.9738761332484, -32.174317242961266, -30.096877869208413, -25.168196558156815, 9.561741332109836, 40.29789784326749, -18.36009023387709, 8.462080681356783, 25.759324918660802, -10.479961195864867, 6.494447877321334, 10.127550240932546, -6.732756319286511, -26.263073778198187, -17.048073591607114, 115.34704126641373, -38.68263071468459, -91.03995745658601, -18.643274371506543, 112.7549075973086, -50.517883424061345, -88.08996441239725, -47.18747049337203, -57.03205711918865, -80.03119645896548, -56.4425252562579, 131.90219085986826, 108.3214653221457, -37.05388398298986, 116.61196382971596, 114.42848511840879, -34.959947445007444, 125.58048620890261, -46.233000533331, -34.56226911299726, 84.54758246233473, -23.934649790113568, -37.66454503439203, -30.167034586671306, -22.85010315124743, -19.673513469146904, 11.164337131044789, -65.7278835363518, 5.876167723903821, 3.038862327535473], "y": [102.77604227498811, -57.5214703821715, 200.16442944842515, 67.07775106015954, 14.115955168812667, -81.6783982600649, -81.05109373384475, 52.467179299072654, 48.187809147769805, -67.55190029586316, 64.05772975136199, 83.62827032235046, -51.10979701149702, -43.388827498135065, 6.6307828389211245, -92.55699725440022, -60.65541009942582, -4.535642572792252, -9.963340473564402, 84.60760832704572, -102.49034655426128, -48.32434584809291, -1.7843845008308603, -2.4118252256896913, -17.64666929132761, -1.2024437762381635, 50.49872451994714, -52.032602747686965, 10.47001702579476, -13.11752873255454, -6.80487959241048, -22.229283279344273, -35.319697451959144, 0.3344912651438763, 6.88021077040146, 22.17207620152761, -6.067709297549775, 36.87183683802961, 15.82139901372438, 36.99404154014702, -27.439461503233648, -7.4341907752169885, -11.19702366415359, -34.77101068738889, -73.45873781842971, -36.1500242798587, 22.50760056355645, 25.164411526182114, 39.55184015734903, 14.925193677170677, 15.753448711541475, -25.759431068013438, 10.082321769992447, -33.54068730152799, -14.934659382287231, 4.177404373720878, 22.67979250201839, -3.922635169115094, 4.926175089532519, 12.304581436958012, 2.4116161744005074, 24.199838354646847, 49.75564131617225, -35.18559199094916, 11.041827053014465], "marker": {"size": "16", "showscale": true, "colorbar": {"title": "FOXP3"}, "color": [6.21451277485313, 5.6187410073092465, 6.41697080832773, 5.769793044908087, 5.860347491602674, 6.117281248822816, 5.815486357405409, 6.196785167349354, 5.75358726719254, 5.799050878062043, 5.98444424427841, 6.029692988877843, 6.016476892372066, 6.06220547287225, 6.021010301417924, 6.162598157060316, 6.193787857851748, 5.988961905535111, 6.091257617122847, 6.249900096863496, 6.323595320045707, 6.302623268228717, 6.528302552688724, 6.373045316601069, 5.80152209308699, 5.997837020068513, 6.27714454612122, 6.0115072493131505, 5.8966696384235, 6.1268668923625, 6.046951949752557, 6.2721463804128135, 6.40193689198679, 6.309689237113397, 6.326024196078227, 5.733843077961403, 5.851540882044419, 6.42936398432922, 6.130862011006499, 5.722953235797836, 6.062215905281654, 6.32726143133245, 6.31601341725479, 6.118039644780854, 6.241997701143263, 6.018062907431317, 5.573889172918551, 5.7909978329958065, 6.283917384173557, 5.939083449570034, 5.707236699164767, 5.7795194045793705, 5.7960232248296775, 6.052205298246591, 6.212797792851973, 5.5981566481828535, 6.332232031726661, 6.218385793165041, 6.5595309925164464, 6.27904225542573, 6.23720388082477, 5.748048650932264, 5.934891316476651, 6.284345995949447, 6.294186081784996], "colorscale": "Viridis"}, "type": "scatter", "text": ["GSM266974.CEL", "GSM266967.CEL", "GSM266970.CEL", "GSM266982.CEL", "GSM266988.CEL", "GSM266972.CEL", "GSM266985.CEL", "GSM266986.CEL", "GSM266975.CEL", "GSM266966.CEL", "GSM266984.CEL", "GSM266976.CEL", "GSM266987.CEL", "GSM266964.CEL", "GSM266981.CEL", "GSM266973.CEL", "GSM266969.CEL", "GSM266983.CEL", "GSM266968.CEL", "GSM266965.CEL", "GSM266971.CEL", "GSM266978.CEL", "GSM558976.CEL", "GSM558982.CEL", "GSM558975.CEL", "GSM558981.CEL", "GSM558979.CEL", "GSM558977.CEL", "GSM616125.CEL", "GSM616119.CEL", "GSM616124.CEL", "GSM616120.CEL", "GSM616118.CEL", "GSM616126.CEL", "GSM723826.CEL", "GSM723827.CEL", "GSM285033.CEL", "GSM285042.CEL", "GSM723821.CEL", "GSM723828.CEL", "GSM723817.CEL", "GSM285044.CEL", "GSM285038.CEL", "GSM723815.CEL", "GSM285027.CEL", "GSM285032.CEL", "GSM723831.CEL", "GSM723830.CEL", "GSM285037.CEL", "GSM723829.CEL", "GSM723833.CEL", "GSM285031.CEL", "GSM723832.CEL", "GSM723816.CEL", "GSM723818.CEL", "GSM723820.CEL", "GSM723824.CEL", "GSM723819.CEL", "GSM723823.CEL", "GSM723825.CEL", "GSM723822.CEL", "MKLE_133-2_EXP2-TREG-TUBE2_071111_HG-U133_Plus_2.CEL", "MKLE_133-2_EXP1-TREG-TUBE14_070511_HG-U133_Plus_2.CEL", "MKLE_133-2_EXP1-TREG-P-TUBE18_070511_HG-U133_Plus_2.CEL", "MKLE_133-2_EXP2-TREG-P-TUBE6_070511_HG-U133_Plus_2.CEL"]}], {"title": "PCA"}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
 </div>
 
 </div>
@@ -15192,7 +15183,10 @@ Name: 1, dtype: float64</pre>
 <li>pandas : 同じくデータサイエンス3本柱の一つ。データフレームオブジェクトと豊富な機能が利用可能。</li>
 <li>matplotlib : 鉄板可視化ライブラリ。これを知らずにpythonを知っているとは言えない。</li>
 <li>seaborn : クラスターマップに使用。matplotlibをリッチにしてくれる。</li>
-<li>plotly : インタラクティブな可視化が出来るライブラリ。これも熱い。</li>
+<li><p>plotly : インタラクティブな可視化が出来るライブラリ。これも熱い。</p>
+</li>
+<li><p>scikit-bio : alignmentの例で使用。</p>
+</li>
 </ul>
 
 </div>
@@ -15202,19 +15196,34 @@ Name: 1, dtype: float64</pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Python&#12398;&#23398;&#32722;&#12395;&#12388;&#12356;&#12390;">Python&#12398;&#23398;&#32722;&#12395;&#12388;&#12356;&#12390;<a class="anchor-link" href="#Python&#12398;&#23398;&#32722;&#12395;&#12388;&#12356;&#12390;">&#182;</a></h3><p>僭越ながら。</p>
 <h4 id="Python&#12398;&#21193;&#24375;&#12434;&#22987;&#12417;&#12383;&#12356;&#12392;&#24605;&#12387;&#12383;&#26041;&#12408;">Python&#12398;&#21193;&#24375;&#12434;&#22987;&#12417;&#12383;&#12356;&#12392;&#24605;&#12387;&#12383;&#26041;&#12408;<a class="anchor-link" href="#Python&#12398;&#21193;&#24375;&#12434;&#22987;&#12417;&#12383;&#12356;&#12392;&#24605;&#12387;&#12383;&#26041;&#12408;">&#182;</a></h4><ul>
 <li><a href="https://www.udemy.com/python-jp/">udemy 【世界で5万人が受講】実践 Python データサイエンス</a> : 17.5hのビデオ講座。私はこれで始めました。有料。</li>
 <li><a href="http://rosalind.info/problems/locations/">rosalind</a> : bioinformaticsの練習サイト。少し慣れてきたら。</li>
 <li>その他書籍、オンライン学習等色々あります。</li>
 </ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="&#24773;&#22577;&#21454;&#38598;&#25163;&#27573;&#65288;Python&#12395;&#38480;&#12425;&#12394;&#12356;&#12364;&#12290;&#65289;">&#24773;&#22577;&#21454;&#38598;&#25163;&#27573;&#65288;Python&#12395;&#38480;&#12425;&#12394;&#12356;&#12364;&#12290;&#65289;<a class="anchor-link" href="#&#24773;&#22577;&#21454;&#38598;&#25163;&#27573;&#65288;Python&#12395;&#38480;&#12425;&#12394;&#12356;&#12364;&#12290;&#65289;">&#182;</a></h4><ul>
 <li><a href="https://qiita.com/trend">qiita</a> : プログラマのための技術情報共有サービス。</li>
 <li><a href="https://www.kaggle.com">kaggle</a> : データサイエンスコンペティションのプラットフォーム。kernelなど、可視化やデータ処理の参考に。</li>
-<li>twitter,blog : バイオインフォマティクス界隈の人や情報界隈の人は割とやっている人が多い。「bounohu blog」「六本木で働くデータサイエンティストのブログ」「驚異のアニヲタ社会復帰への道」「macでインフォマティクス」などなど他分野にわたる。twitterで有名論文公式や有名研究者などをフォローしたり、RSSでまとめてブログを調べたり。</li>
+<li>twitter,blog : バイオインフォマティクス界隈の人や情報界隈の人は割とやっている人が多い。「bounohu blog」「六本木で働くデータサイエンティストのブログ」「驚異のアニヲタ社会復帰への道」「macでインフォマティクス」などなど他分野にわたる。twitterで有名論文公式や有名研究者などをフォローしたり、RSSでまとめてブログをよんだり。</li>
 <li><a href="http://google.co.jp">google</a> : 言わずもがな。なんでも調べる。エラーが出たらエラーをコピペ。</li>
 </ul>
 
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="&#12392;&#12395;&#12363;&#12367;&#12289;&#12356;&#12429;&#12356;&#12429;&#35302;&#12387;&#12390;&#12415;&#12427;&#12398;&#12364;&#22823;&#20107;&#12384;&#12392;&#24605;&#12356;&#12414;&#12377;&#12290;">&#12392;&#12395;&#12363;&#12367;&#12289;&#12356;&#12429;&#12356;&#12429;&#35302;&#12387;&#12390;&#12415;&#12427;&#12398;&#12364;&#22823;&#20107;&#12384;&#12392;&#24605;&#12356;&#12414;&#12377;&#12290;<a class="anchor-link" href="#&#12392;&#12395;&#12363;&#12367;&#12289;&#12356;&#12429;&#12356;&#12429;&#35302;&#12387;&#12390;&#12415;&#12427;&#12398;&#12364;&#22823;&#20107;&#12384;&#12392;&#24605;&#12356;&#12414;&#12377;&#12290;">&#182;</a></h1>
 </div>
 </div>
 </div></section></section>
